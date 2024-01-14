@@ -1,0 +1,40 @@
+version: '3.4'
+
+services:
+  labelstudio:
+    container_name: labelstudio
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: label_studio
+    ports:
+      - "8080:8080"
+    stdin_open: true   
+    tty: true   
+    volumes:
+     - ./output:/output
+    environment:
+      PIP_DEFAULT_TIMEOUT: 1000
+      DOCKER_RUNNING: true
+      LABEL_STUDIO_DATABASE: '/output'
+      LABEL_STUDIO_BASE_DATA_DIR: '/output'
+    entrypoint: label-studio
+
+  streamlitapp:
+    container_name: streamlitapp
+    shm_size: 1gb
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: streamlit  
+    ports:
+      - "8501:8501"
+    stdin_open: true   
+    tty: true   
+    volumes:
+     - ./output:/output
+    environment:
+      DOCKER_RUNNING: true
+    depends_on:
+      - labelstudio
+    entrypoint: streamlit run /src/main.py

@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  notebook:
+    ipc: host
+    image: notebook
+    build: 
+      context: .
+      dockerfile: Dockerfile.Notebook
+    restart: 'no'
+    volumes:
+        - ./notebooks:/home/jovyan/notebooks
+        - ./output:/home/jovyan/output
+    ports:
+        - "8888:8888"
+    command: "start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''"
+    environment:
+      PYTHONPATH: /home/jovyan/notebooks/models
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

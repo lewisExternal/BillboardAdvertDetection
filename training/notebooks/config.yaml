@@ -1,0 +1,10 @@
+# Dataset paths relative to the yolov5 folder
+train: ../output/YOLO_DATA_FORMATTED/images/train
+val:   ../output/YOLO_DATA_FORMATTED/images/val
+test:  ../output/YOLO_DATA_FORMATTED/images/test
+
+# Number of classes
+nc: 1
+
+# Class names 0 - advert
+names: ['advert']

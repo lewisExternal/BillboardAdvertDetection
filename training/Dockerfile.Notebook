@@ -1,0 +1,8 @@
+FROM jupyter/tensorflow-notebook
+
+RUN conda install -c conda-forge cudatoolkit=11.8.0
+
+RUN git clone --quiet https://github.com/ultralytics/yolov5 /home/jovyan/yolov5/
+
+RUN pip install --upgrade pip
+RUN pip install -U -r /home/jovyan/yolov5/requirements.txt 
