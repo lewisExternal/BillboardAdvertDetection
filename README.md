@@ -8,7 +8,7 @@ This is to show how to create a computer vision model for applications such as a
 ![test_2](https://github.com/lewisExternal/graveYardPrivatePublish/assets/81447748/79b1ef83-9704-4fd8-8349-58835d7ddbdb)
 ![test_3](https://github.com/lewisExternal/graveYardPrivatePublish/assets/81447748/5f392d12-b87c-49fb-81a4-51be13024744)
 
-Read the Medium article ![here](https://medium.com/@ljamesdatascience/billboard-advert-detection-using-transfer-learning-with-yolo-9405d6aeb943) 
+Read the Medium article [here](https://medium.com/@ljamesdatascience/billboard-advert-detection-using-transfer-learning-with-yolo-9405d6aeb943) 
 
 ## Run Locally  
 
