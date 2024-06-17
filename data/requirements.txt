@@ -2,5 +2,5 @@ label-studio==1.7.3
 streamlit==1.24.0 
 selenium==4.16.0
 webdriver-manager==3.8.6
-undetected-chromedriver==3.5.4
+undetected-chromedriver==3.5.5
 python-dateutil==2.8.1
